@@ -11,12 +11,12 @@ function setup(){
     var canvas = createCanvas(800,1200);
     engine = Engine.create();
     world = engine.world;
+
+    table = createSprite(1100, 700);    
 }
 
 function draw(){
-    background("green")
+    background("green");
     Engine.update(engine);  
-
-    table = createSprite(700, 1100);
-    table.shapeColor("red");                                    
+                                        
 }
