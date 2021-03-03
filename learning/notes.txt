@@ -1,0 +1,11 @@
+// Task 1 : Basics and Fundamentals
+| COMPLETED |
+    : Create a Working JS Form
+    : Make the Form for Asking a User's Name and Age
+    and then Checking if The User is Can Legally Drive or not
+    : If yes, then first create an alert() stating that they Can Drive
+    : If no, then alert() them that People who are 16 y'old or high can only Drive
+    : Then after they click Ok on the alert()
+    the Form get's removed from the Page and 
+    : A Result Page comes up on the Area of the Form
+    saying the User's Name entered in the Form

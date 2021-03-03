@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Arunnya Biotech",
+        "numberofEmployees": 1000,
+        "ceo": "Niraj Varma",
+        "rating": 4.6
+    },
+    {
+        "name": "Unimax Laboratories",
+        "numberofEmployees": 10000,
+        "ceo": "Vishal Jain",
+        "rating": 4
+    }
+]

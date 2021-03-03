@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/learning.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/index.css">
+    <style>
+    form{
+      /* display: none; */
+    }
+    </style>
+    <title>LearningJS | AVMC</title>
+</head>
+<body>
+    <div class="container"><br>
+        <img src="servermc.png" class="rounded-full mr-4">
+        <br><br>
+        <h3>Enhancing JavaScript from CWH | AVMC</h3>
+        <p><h5>This won't contain Projects but Important Fundamentals and Basics,
+        this page also Contains my Currently Working Tasks and Tasks Completed.</h4>  
+        </p>
+        <a href="../">Go Back to MainJS Page</a>
+    </div>
+  <hr>
+  <div class="container">
+  <h4><u><b>Task 1:</b> Basics and Fundamentals</u> <span class="badge badge-primary">Completed! <img src="https://img.icons8.com/color/20/000000/checked-2--v1.png"/> </span></h4> 
+  <h5><b>Subtask 1:</b> Learn All Basics and Fundamentals of JS <span class="badge badge-primary">Done!</span></h5>
+  <h5><b>Subtask 2:</b> Create Form for Checking if the User can Drive! <span class="badge badge-primary">Done!</span></h5>
+    
+    <removeform id="remform">
+    <form id="formisgood">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Enter your Name</label>
+        <input placeholder="Your Full Name" class="form-control" id="name" aria-describedby="name" required>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Enter your Age</label>
+        <input type="number" placeholder="Your Age" class="form-control" id="yourage" min="5" max="70" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </removeform>
+    <div class="container"><hr></div>
+    <easykatka>
+    </easykatka>
+    <easykatka2>
+    </easykatka2>
+    <easykatka3>
+    </easykatka3>  
+    <!-- Form IDs: -->
+    <!-- ID: formisgood -->
+    <!-- Name: name -->
+    <!-- Age: age -->
+    <script>
+      // DOM Manipulation
+      // This only works when the script is written
+      // in the HTML Page Itself!
+      const body = document.body;
+      const p = document.createElement("p");
+      p.textContent = "THIS WORKED!!";
+      // body.append(p);
+      // DOM Manipulation 2
+      // Modifying an Existing HTML Element
+      const div = document.querySelector("easykatka");
+      const div2 = document.querySelector("easykatka2");
+      const div3 = document.querySelector("easykatka3");
+      const remformop = document.querySelector("remform");
+      // Form Handling and Functioning!
+      var form = document.getElementById('formisgood');
+      form.addEventListener('submit', function(event){
+          event.preventDefault() // prevents auto-submittion in Forms!
+
+          var name = document.getElementById('name').value;
+          var age = document.getElementById('yourage').value;
+          console.log("[Form Event] Name submitted: " + name);
+          console.log("[Form Event] Age of " + name + " Submitted is: " + age);
+          div.innerHTML = "<h5>Your Name is " + name + " and Your Age is " + age; 
+          if(age < 16){
+          div2.innerHTML = "<p><b>Your Age is Lesser than Required to Drive a Car!</b></p>";
+          div3.innerHTML = '<p><b>Minimum Age for Driving is 16, ' + name + "." + "</b></p>";
+          console.log('Minimum Age for Driving is 16, ' + name + ".");
+          alert('Minimum Age for Driving is 16, ' + name + ".");
+          } else if(age > 16){
+            div2.innerHTML = "<p><b>Your Age is More Than Required to Drive a Car!</b></p>";
+            console.log('You can Safely Drive as Your Age is ' + age + " (16+)");
+            alert('You can Safely Drive as Your Age is ' + age + " (16+)");
+          } else if(age = 16){
+            div2.innerHTML = "<p><b>Your Age can Safely Drive a Car!</b></p>";
+            console.log('You can Safely Drive as Your Age is ' + age);
+            alert('You can Safely Drive as Your Age is ' + age);
+          }
+          remform.innerHTML = "";
+      })
+      // JSON OP!
+      let companies =
+      [
+        {
+            "name": "Arunnya Biotech",
+            "numberofEmployees": 1000,
+            "ceo": "Niraj Varma",
+            "rating": 4.6
+        },
+        {
+            "name": "Unimax Laboratories",
+            "numberofEmployees": 10000,
+            "ceo": "Vishal Jain",
+            "rating": 4
+        }
+      ];
+      console.log('Companies JSON Loaded!');
+      // Now, if we want to fetch or show ABPL's CEO name
+      // then we can use companies[0].ceo to show the 
+      // CEO's Value that is the Name..
+    </script>
+    <p><h5><a href="../js/learning.js" target="_blank">Go to this Project's JS</a> | <a href="notes.txt" target="_blank">Go to this Project's Notes</a><h5></p><br>
+    </div>  
+    <!-- TASK 2 STARTS HERE -->
+    <hr><br>
+    <div class="container">
+    <h4><u><b>Task 2:</b> Working Jumbotron JS Clock</u> <span class="badge badge-primary">Completed! <img src="https://img.icons8.com/color/20/000000/checked-2--v1.png"/> </span> </h4> 
+    <h4></h4>
+    <p><h5><a href="../" target="_blank">Go to this Project</a> | <a href="notes.txt" target="_blank">Go to this Project's Notes</a><h5></p><br>
+  </div>  
+  <hr>
+  <div class="container">
+    <h4><u><b>Task 3:</b> Working To-Do List JS</u> <span class="badge badge-success">Almost Completed! <img src="clock.gif"/ width="25"> </span> </h4>
+    <!-- Starts Here -->
+    <!-- <form> -->
+      <div class="form-group">
+        <label for="exampleInputEmail1">Item Title</label>
+        <input placeholder="Add an Item to the List!" type="text" class="form-control" id="title" aria-describedby="emailHelp" required-field>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Item Description</label>
+        <textarea placeholder="Add a Description to Your Item!" class="form-control" id="description"></textarea>
+      </div>
+      <button type="submit" id="add" class="btn btn-primary">Add to List</button>
+    <!-- </form> --> <br><br>
+    <!-- Items Area -->
+    <div id="items">
+      <h5>Your Items: </h5>
+    </div>
+    <!-- /Items Area End -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">S-No</th>
+          <th scope="col">Item Title</th>
+          <th scope="col">Item Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+      </tbody>
+    </table>
+    <!-- Ends Here -->
+    <!-- Script Here! -->
+    <script>
+        function getAndUpdate(){
+          console.log("Updating List..");
+          tit = document.getElementById('title').value;
+          desc = document.getElementById('description').value;
+          if(document.getElementById("title").value.length == 0){
+              alert("Please fill this Required Field!");
+              return;
+          }
+          if(document.getElementById("description").value.length == 0){
+              alert("Please fill the Description Field too!");
+              return;
+          }
+          if (localStorage.getItem('itemsJson')==null){
+              itemJsonArray = [];
+              itemJsonArray.push([tit, desc]);
+              localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+          }
+          else{
+              itemJsonArrayStr = localStorage.getItem('itemsJson');
+              itemJsonArray = JSON.parse(itemJsonArrayStr);
+              itemJsonArray.push([tit, desc]);
+              localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+          }
+          update()
+        }
+        function update(){
+          if (localStorage.getItem('itemsJson')==null){
+              itemJsonArray = [];
+              itemJsonArray.push([tit, desc]);
+              localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+          }
+          else{
+              itemJsonArrayStr = localStorage.getItem('itemsJson');
+              itemJsonArray = JSON.parse(itemJsonArrayStr);
+          }
+          // Populate the Table
+          tableBody = document.getElementById("tableBody");
+          let str = "";
+          itemJsonArray.forEach((element, index) => {
+            str += `
+            <tr>
+            <th scope="row">${index+1}</th>
+            <td>${element[0]}</td>
+            <td>${element[1]}</td>
+            <td><button class="btn btn-sm btn-primary" onclick="deLete(${index})">Delete</button></td>
+            </tr>`;
+          });
+        tableBody.innerHTML = str;
+        }
+        add = document.getElementById("add");
+        add.addEventListener("click", getAndUpdate);
+        update();
+        function deLete(itemIndex){
+            console.log("Delete", itemIndex);
+            itemJsonArrayStr = JSON.parse(itemJsonArrayStr);
+            // Delete itemIndex element from the Array
+            itemJsonArray.splice(itemIndex, 1);
+            localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
+            update();
+        }
+        // Clear List Button Function
+        function storageClear(){
+          if (confirm("Do you Really Want to Clear all the Lists?")){
+          console.log("Clearing the Storage");
+          localStorage.clear();
+          update()
+        }
+      }
+    </script>
+    <!-- Script Ends Here! -->
+    <p><h5><a href="../js/learning.js" target="_blank">Go to this Project's JS</a> | 
+      <a href="notes.txt" target="_blank">Go to this Project's Notes</a><h5></p><br>
+  </div>  
+  <hr>
+  <div class="container">
+    <h4><u><b>Task 4:</b> Working Library Site JS</u> <span class="badge bg-secondary">On Work! 
+      <img src="clock.gif"/ width="25"> </span></h4>
+    <!-- Starts Here -->
+    <p><h5><a href="cwh-library/" target="_blank">Go to this Project</a> | 
+      <a href="notes.txt" target="_blank">Go to this Project's Notes</a><h5></p><br>
+</div>
+</body>
+</html>
