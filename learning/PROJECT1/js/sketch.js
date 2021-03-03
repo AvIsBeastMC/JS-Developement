@@ -3,9 +3,6 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 
 var engine, world;
-var box1, pig1;
-
-var backGroundImg;
 
 function preload(){
 
