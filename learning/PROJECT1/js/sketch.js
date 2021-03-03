@@ -14,7 +14,7 @@ function setup(){
 }
 
 function draw(){
-    background(backGroundImg);
+    background("green")
     Engine.update(engine);
 
     table = createSprite(700, 1100);
