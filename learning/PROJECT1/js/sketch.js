@@ -8,7 +8,7 @@ function preload(){
 
 }
 function setup(){
-    var canvas = createCanvas(1200,400);
+    var canvas = createCanvas(800,1200);
     engine = Engine.create();
     world = engine.world;
 }
@@ -16,4 +16,7 @@ function setup(){
 function draw(){
     background(backGroundImg);
     Engine.update(engine);
+
+    table = createSprite(700, 1100)
+
 }
