@@ -17,6 +17,7 @@ function draw(){
     background(backGroundImg);
     Engine.update(engine);
 
-    table = createSprite(700, 1100)
+    table = createSprite(700, 1100);
+    table.shapeColor("red");
 
 }
