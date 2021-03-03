@@ -15,9 +15,8 @@ function setup(){
 
 function draw(){
     background("green")
-    Engine.update(engine);
+    Engine.update(engine);  
 
     table = createSprite(700, 1100);
-    table.shapeColor("red");
-
+    table.shapeColor("red");                                    
 }
