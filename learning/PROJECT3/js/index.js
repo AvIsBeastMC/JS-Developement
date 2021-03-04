@@ -1,4 +1,5 @@
 let important = false;
+// Just Checkin
 function addAnnouncement(){
     announcement = document.getElementById('announcement');
     if (important == true){
