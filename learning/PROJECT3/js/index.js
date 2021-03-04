@@ -1,4 +1,4 @@
-let important = true;
+let important = false;
 function addAnnouncement(){
     announcement = document.getElementById('announcement');
     if (important == true){
