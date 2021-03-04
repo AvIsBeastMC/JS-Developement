@@ -1,4 +1,6 @@
-let important = false;
+// Commit 1
+// Put Important to true
+let important = true;
 // Just Checkin
 function addAnnouncement(){
     announcement = document.getElementById('announcement');
