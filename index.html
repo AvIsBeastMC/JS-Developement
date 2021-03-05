@@ -51,6 +51,7 @@
         <a href="learning/">Go to LearningJS Page</a>
         <br><br>
         <headop id="announcement"></headop>
+        <h1 id="firebaseWorking"></h1>
         <br>
     </div>
   <hr>
@@ -64,5 +65,34 @@
     <p class="lead1">I have created this for showing the Absolute 
     Time of when you are Seeing this.</p>
   </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyB7QazH81gD8dizjims1ct6cvyCCNUlBtA",
+    authDomain: "avmc-firebase-js.firebaseapp.com",
+    projectId: "avmc-firebase-js",
+    storageBucket: "avmc-firebase-js.appspot.com",
+    messagingSenderId: "720714743160",
+    appId: "1:720714743160:web:ce159ae194cc9bcce91c8d",
+    measurementId: "G-G5Z92DSN0T"
+  };
+  // Line 78
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var bigOne = document.getElementById('firebaseWorking');
+  var dbRef = firebase.database().ref().child('announcementValue');
+  
+  // dbRef.on('value', snap => bigOne.innerText = snap.val());
+</script>  
 </body>
 </html>

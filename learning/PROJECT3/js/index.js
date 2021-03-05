@@ -1,9 +1,10 @@
 // Commit 1
 // Put Important to true
-let important = true;
+let important = true; 
 // Just Checkin
 function addAnnouncement(){
     announcement = document.getElementById('announcement');
+    // announcementOp = dbRef.on('value', snap => bigOne.innerText = snap.val()); 
     if (important == true){
     console.log("[AVMC] Displaying Announcements!...");
     let headerStr = `<div class="alert alert-success" role="alert">
@@ -16,7 +17,7 @@ function addAnnouncement(){
                      <p class="mb-0"> You may also Attach the Book PDF (Under Development)</p>`;
     announcement.innerHTML += headerStr;
     } else if (important == false){
-        console.log("[AVMC] There are No Announcements!")
+        console.log("[AVMC] There are No Announcements!");
     };
 }
 // MainJS
