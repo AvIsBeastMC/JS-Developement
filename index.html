@@ -5,11 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/index.js"></script>
+    <script src="learning/PROJECT3/js/index.js"></script>
+    <link rel="shortcut icon" type="image/jpg" href="servermc.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style/index.css">
     <title>MainJS | AVMC</title>
 </head>
-<body>
+<body onload="addCurrentProject(); addAnnouncement()">
+  <style>
+  nav a img{
+      border-radius: 50%;
+      width: 45px;
+  }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="servermc.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home- MainJS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="learning/">LearningJS- Projects in Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=""><span id="currentProject"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
     <div class="container"><br>
         <img src="servermc.png" class="rounded-full mr-4">
         <br><br>
@@ -19,8 +49,12 @@
         </h4>  
         </p>
         <a href="learning/">Go to LearningJS Page</a>
+        <br><br>
+        <headop id="announcement"></headop>
+        <br>
     </div>
   <hr>
+  <br>
   <div class="container">
     <h4><u><b>Task 1:</b> Working Jumbotron JS Clock</u></h4></div>
     <br>

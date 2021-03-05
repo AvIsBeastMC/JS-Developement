@@ -19,3 +19,15 @@ function addAnnouncement(){
         console.log("[AVMC] There are No Announcements!")
     };
 }
+// MainJS
+let currentProject = 'AVMC';
+// Function to Show Current Project in the Nav Link
+function addCurrentProject(){
+    let currentProjectHandler = document.getElementById('currentProject');
+    console.log("[AVMC] Current Project on Work is " + currentProject);
+    let addCurrentProjectStr = `${currentProject}`;
+    currentProjectHandler.innerHTML += addCurrentProjectStr;
+    if(currentProjectHandler.value == currentProject){
+        return;
+    }
+}
