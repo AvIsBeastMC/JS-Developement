@@ -12,7 +12,6 @@ function setup(){
     engine = Engine.create();
     world = engine.world;
 
-    table = createSprite(1100, 700, 100, 100);    
 }
 
 function draw(){
