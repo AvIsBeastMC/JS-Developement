@@ -8,14 +8,15 @@ function preload(){
 
 }
 function setup(){
-    var canvas = createCanvas(800,1200);
+    var canvas = createCanvas(1200,800);
     engine = Engine.create();
     world = engine.world;
-
+    border1 = new BaseClass(100, 1000, 400, 500);
 }
 
 function draw(){
     background("green");
-    Engine.update(engine);  
+    Engine.update(engine);
+    border1.display();
     
 }
