@@ -62,6 +62,12 @@
         <h5><b>Subtask 1:</b> Get and Show Data from an Object Created on the Database <span class="badge badge-primary">Done!</span></h5>
     <!-- Value -->
     <pre id="object"></pre>
+    <!-- Child -->
+    <h5><b>Subtask 1:</b> Get and Show Data from an Object Created on the Database <span class="badge badge-primary">Done!</span></h5>
+    <ul id="list">
+    </ul>
+    
+    </div>
     <script>
       // Get Element
       const preObject = document.getElementById('object');
@@ -80,18 +86,13 @@
       dbRefList.on('child_added', snap => {
           
         const li = document.createElement('li');
+        li.id = 'liop'
+        const getLi = document.getElementById('liop');
         li.innerText = snap.val();
         ulList.appendChild(li);
 
       })
     </script>
-    
-    <!-- Child -->
-    <ul id="list">
-        
-    </ul>
-    
-    </div>
     <!-- Project Ends Here -->
 <!-- Script Ends Here! -->    
 </body>
