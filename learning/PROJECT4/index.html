@@ -42,14 +42,6 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
-      // Get Element
-      const preObject = document.getElementById('object');
-      
-      // Create References
-      let dbRefObject = firebase.database().ref().child('object');
-      
-      // Sync Object Changes
-      dbRefObject.on('value', snap => console.log(snap.val()));
     </script>
     <!-- FIREBASE SCRIPT ENDS HERE -->
     <div class="container"><br>
@@ -65,11 +57,41 @@
     </div>
     <hr>
     <!-- Project Starts Here -->
-    
-    
+    <div class="container">
+        <h5><b>Subtask 1:</b> Learn to Connect and Fetch Data from Database <span class="badge badge-primary">Done!</span></h5>
+        <h5><b>Subtask 1:</b> Get and Show Data from an Object Created on the Database <span class="badge badge-primary">Done!</span></h5>
     <!-- Value -->
     <pre id="object"></pre>
+    <script>
+      // Get Element
+      const preObject = document.getElementById('object');
+      const ulList = document.getElementById('list');
+
+      // Create References
+      let dbRefObject = firebase.database().ref().child('object');
+      let dbRefList = dbRefObject.child('hobbies');
+
+      // Sync Object Changes
+      dbRefObject.on('value', snap => {
+          preObject.innerText = JSON.stringify(snap.val(), null, 3);
+      });
+
+      // Sync List Changes
+      dbRefList.on('child_added', snap => {
+          
+        const li = document.createElement('li');
+        li.innerText = snap.val();
+        ulList.appendChild(li);
+
+      })
+    </script>
     
+    <!-- Child -->
+    <ul id="list">
+        
+    </ul>
+    
+    </div>
     <!-- Project Ends Here -->
 <!-- Script Ends Here! -->    
 </body>
