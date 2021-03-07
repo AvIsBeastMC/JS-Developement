@@ -14,34 +14,44 @@
     border-color: linear-gradient(to right top, #65dfc9, #6cdbeb);
     }
     </style>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-    
-    <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      var firebaseConfig = {
-        apiKey: "AIzaSyAUPMaV5OswfNTfohIxT_sR_bTRQVDaVxo",
-        authDomain: "js-op-1.firebaseapp.com",
-        databaseURL: "https://js-op-1-default-rtdb.firebaseio.com",
-        projectId: "js-op-1",
-        storageBucket: "js-op-1.appspot.com",
-        messagingSenderId: "1053703278024",
-        appId: "1:1053703278024:web:bb906856733d5e187644fd",
-        measurementId: "G-7KJWFP6EV2"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
     <meta charset="utf-8">
     <title>LearningJS | AVMC</title>
 </head>
 <body>
+    <!-- FIREBASE SCRIPT STARTS HERE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyB7QazH81gD8dizjims1ct6cvyCCNUlBtA",
+        authDomain: "avmc-firebase-js.firebaseapp.com",
+        databaseURL: "https://avmc-firebase-js-default-rtdb.firebaseio.com",
+        projectId: "avmc-firebase-js",
+        storageBucket: "avmc-firebase-js.appspot.com",
+        messagingSenderId: "720714743160",
+        appId: "1:720714743160:web:ce159ae194cc9bcce91c8d",
+        measurementId: "G-G5Z92DSN0T"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      // Get Element
+      const preObject = document.getElementById('object');
+      
+      // Create References
+      let dbRefObject = firebase.database().ref().child('object');
+      
+      // Sync Object Changes
+      dbRefObject.on('value', snap => console.log(snap.val()));
+    </script>
+    <!-- FIREBASE SCRIPT ENDS HERE -->
     <div class="container"><br>
     <mainimg>
     <img src="../servermc.png" class="rounded-full mr-4">
@@ -55,6 +65,10 @@
     </div>
     <hr>
     <!-- Project Starts Here -->
+    
+    
+    <!-- Value -->
+    <pre id="object"></pre>
     
     <!-- Project Ends Here -->
 <!-- Script Ends Here! -->    
