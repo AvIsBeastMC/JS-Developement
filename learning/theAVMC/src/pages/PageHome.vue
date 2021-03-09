@@ -1,15 +1,35 @@
 <template>
   <q-page class="q-pa-lg">
-      <h4 class="q-md-none q-mb-md text-weight-bold">Home | theAVMC!</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Ullam molestias sed nostrum vel. Perspiciatis fuga optio ab 
-      ullam excepturi! Quidem qui, sed officia sit aliquid 
-      perferendis provident totam. Similique, ad!</p>
+      <q-input bottom-slots v-model="newQweetInput" label="What's poppin'?" counter maxlength="280" :dense="dense">
+        <template v-slot:before>
+          <q-avatar>
+            <img src="https://avmcgames.ml/servermc.png">
+          </q-avatar>
+        </template>
+
+        <template v-slot:append>
+          <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" />
+          <q-icon name="schedule" />
+        </template>
+
+        <template v-slot:hint>
+          Post | theAVMC
+        </template>
+
+        <template v-slot:after>
+          <q-btn round dense flat icon="send" />
+        </template>
+      </q-input>
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageHome'
+  name: 'PageHome',
+  data() {
+    return {
+      newQweetInput: ''
+    }
+  }
 }
 </script>
