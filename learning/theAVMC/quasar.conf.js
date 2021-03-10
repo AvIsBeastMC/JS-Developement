@@ -110,7 +110,7 @@ module.exports = function (/* ctx */) {
       manifest: {
         name: `theAVMC`,
         short_name: `theAVMC`,
-        description: `A Quasar Framework app`,
+        description: `Made by the JS Dev, the AvIsBeastMC xD`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

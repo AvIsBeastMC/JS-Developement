@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import db from "src/boot/firebase"
 import { formatDistance, subDays } from 'date-fns'
 export default {
   name: 'PageHome',
@@ -56,14 +57,14 @@ export default {
     return {
       newQweetInput: '',
       qweets: [
-        {
-          content: "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?",
-          date: 1615353294215
-        },
-        {
-          content: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
-          date: 1615353381558
-        }
+        // {
+        //   content: "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?",
+        //   date: 1615353294215
+        // },
+        // {
+        //   content: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+        //   date: 1615353381558
+        // },
       ]
     }
   },
@@ -88,6 +89,23 @@ export default {
     relativeDate(value) {
       return formatDistance(value, new Date())
     }
+  },
+  mounted() {
+    db.collection("qweets").onSnapshot(snapshot => {
+        snapshot.docChanges().forEach(change => {
+          let qweetChange = change.doc.data()
+            if (change.type === "added") {
+                console.log("New Qweet: ", qweetChange);
+                this.qweets.unshift(qweetChange)
+            }
+            if (change.type === "modified") {
+                console.log("Modified Qweet: ", qweetChange);
+            }
+            if (change.type === "removed") {
+                console.log("Removed Qweet: ", qweetChange);
+            }
+        });
+    });
   }
 }
 </script>
