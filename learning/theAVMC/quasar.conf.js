@@ -160,16 +160,11 @@ module.exports = function (/* ctx */) {
       bundler: 'packager', // 'packager' or 'builder'
 
       packager: {
-        // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
+        bundler: 'packager',
 
-        // OS X / Mac App Store
-        // appBundleId: '',
-        // appCategoryType: '',
-        // osxSign: '',
-        // protocol: 'myapp://path',
-
-        // Windows only
-        // win32metadata: { ... }
+        packager: {
+          platform: 'win32'
+        }
       },
 
       builder: {
