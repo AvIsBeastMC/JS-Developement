@@ -1,5 +1,6 @@
 <template>
-  <q-page>
+  <q-page class="relative-position">
+    <q-scroll-area class="absolute fullscreen">
     <div class="q-pa-lg row items-end q-col-gutter-md">
       <div class="col">
         <q-input bottom-slots v-model="newQweetInput" autogrow class="new-post" label="What's poppin'?" counter maxlength="280" :dense="dense">
@@ -14,12 +15,13 @@
       </q-input>
       </div>
       <div class="col col-shrink">
-        <q-btn :disable="!newQweetInput" class="q-mb-lg" push color="primary" rounded label="post" />
+        <q-btn @click="addNewQweet" :disable="!newQweetInput" class="q-mb-lg" push color="primary" rounded label="post" />
       </div>
     </div>
     <q-separator class="divider" size="9px" color="grey-3" />
     <q-list separator>
-      <q-item class="q-py-md" v-for="qweet in qweets" :key="qweet.date">
+    <transition-group appear enter-active-class="animated fadeIn slow" leave-active-class="animated fadeOut slow">
+      <q-item class="qweet q-py-md" v-for="qweet in qweets" :key="qweet.date">
         <q-item-section avatar top>
           <q-avatar>
             <img src="https://avmcgames.ml/servermc.png">
@@ -29,24 +31,25 @@
         <q-item-section>
           <q-item-label class="text-subtitle1">
           <strong>AvIsBeastMC | AVMC Network</strong>
-          <span class="text-grey-7"> @arunnyavarma</span>
+          <span class="text-grey-7"> @arunnyavarma <br class="lt-md"> &bull; {{ qweet.date | relativeDate }} </span>
           </q-item-label>
           <q-item-label class="theAVMC-content text-body1"> {{ qweet.content }} </q-item-label>
         <div class="row justify-between q-mt-sm qweet-icons">
         <q-btn flat size="sm" round color="primary" icon="far fa-comment" />
         <q-btn flat size="sm" round color="primary" icon="fas fa-retweet" />
         <q-btn flat size="sm" round color="primary" icon="far fa-heart" />
-        <q-btn flat size="sm" round color="primary" icon="fas fa-trash" />
+        <q-btn @click="deleteQweet(qweet)" flat size="sm" round color="primary" icon="fas fa-trash" />
         </div>
         </q-item-section>
-
-        <q-item-section side top> {{ qweet.date }} </q-item-section>
       </q-item>
-    </q-list>  
+    </transition-group>  
+    </q-list>
+    </q-scroll-area>  
   </q-page>
 </template>
 
 <script>
+import { formatDistance, subDays } from 'date-fns'
 export default {
   name: 'PageHome',
   data() {
@@ -63,6 +66,28 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    addNewQweet() {
+      let newQweet = {
+        content: this.newQweetInput,
+        date: Date.now()
+      }
+      this.qweets.unshift(newQweet)
+      this.newQweetInput = ''
+    },
+    deleteQweet(qweet) {
+      console.log('Delete theAVMC Post: ', qweet)
+      let dateToDelete = qweet.date
+      let index = this.qweets.findIndex(qweet => qweet.date === dateToDelete)
+      console.log('Index: ', index)
+      this.qweets.splice(index, 1)
+    }
+  },
+  filters: {
+    relativeDate(value) {
+      return formatDistance(value, new Date())
+    }
   }
 }
 </script>
@@ -74,6 +99,8 @@ export default {
   border-top: 1px solid
   border-bottom: 1px solid
   border-color: $grey-4
+.qweet:not(:first-child)
+  border-top: 1px solid rgba(0, 0, 0, 0.12)
 .theAVMC-content
   white-space: pre-line
 .qweet-icons
