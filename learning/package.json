@@ -11,10 +11,13 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
+    "ejs": "^3.1.6",
     "quasar": "^1.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.0"
+    "@quasar/app": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7"
   },
   "browserslist": [
     "last 10 Chrome versions",
