@@ -1,0 +1,5 @@
+mainimg img {
+    border-radius: 50%;
+    width: 7%;
+    border-color: linear-gradient(to right top, #65dfc9, #6cdbeb);
+}
