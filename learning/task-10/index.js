@@ -20,6 +20,8 @@ db.collection("form1").onSnapshot((snapshot) => {
             let qweetChange = change.doc.data()
             if (change.type === "added") {
                 console.log("New city: ", change.doc.data());
+                var objectReq = change.doc.data()
+                console.log(objectReq.bookName)
                 // Plan is to Get the First Value in array[0], and the Second Seperately
                 // than can be stored in a Variable 
             }
