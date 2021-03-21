@@ -60,7 +60,7 @@ function submitForm() {
                 <td>${formType}</td>
                 <td>${submittedOn}</td>
                 </tr>`;
-        let listAllSub = `<button type="button" onclick="displayAllSub()" class="btn btn-info">List all Submittions</button><br>`
+        let listAllSub = `<button type="button" id="butDisable" onclick="displayAllSub()" class="btn btn-info">List all Submittions</button><br>`
         tableBody.innerHTML += addForm;        
         listAllSubm.innerHTML += listAllSub
         // For Adding an InnerHTML Alert!
@@ -80,10 +80,34 @@ function submitForm() {
         console.log("Form Display Removed!");
 }
 function displayAllSub() {
-    db.collection("form1").onSnapshot(snapshot => {
-        snapshot.docChanges().forEach(change => {
+    db.collection("form1").onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
             if (change.type === "added") {
                 console.log("New city: ", change.doc.data());
+                console.log(change.doc.data());
+                var objectReq1 = change.doc.data()
+
+                tableBody = document.getElementById("tableBody");
+                listAllSubm = document.getElementById("listAllSubm")
+                btnDisable = document.getElementById("butDisable");
+
+                submName = objectReq1.bookName;
+                submAuthor = objectReq1.bookAuthor;
+                submType = objectReq1.bookType;
+                submSubmittedOn = objectReq1.submittedOn;
+
+                let addForm2 = `
+                <td>${submName}</td>
+                <td>${submAuthor}</td>
+                <td>${submType}</td>
+                <td>${submSubmittedOn}</td>
+                </tr>`;
+
+                tableBody.innerHTML += addForm2;
+
+                var att = document.createAttribute("disabled");
+                btnDisable.setAttributeNode(att);
+
             }
             if (change.type === "modified") {
                 console.log("Modified city: ", change.doc.data());
