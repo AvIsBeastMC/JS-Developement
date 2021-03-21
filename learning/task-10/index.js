@@ -132,6 +132,55 @@ function displayAllSub() {
         });
     });
 }
+
+
+
+
+
+
+
+function displayAllSub2() {
+    db.collection("form1").onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+            console.log("List all Submissions Button Pressed!")
+            if (change.type === "added") {
+                console.log("New city: ", change.doc.data());
+                console.log(change.doc.data());
+                var objectReq1 = change.doc.data()
+
+                tableBody = document.getElementById("tableBody");
+                listAllSubm = document.getElementById("listAllSubm")
+                btnDisable = document.getElementById("butDisable2");
+                submitPreview = document.getElementById("tableBeforeAllSubm") // Preview Table
+                
+                submName = objectReq1.bookName;
+                submAuthor = objectReq1.bookAuthor;
+                submType = objectReq1.bookType;
+                submSubmittedOn = objectReq1.submittedOn;
+                
+
+                let addForm2 = `
+                <td>${submName}</td>
+                <td>${submAuthor}</td>
+                <td>${submType}</td>
+                <td>${submSubmittedOn}</td>
+                </tr>`;
+
+                tableBody.innerHTML += addForm2;
+                
+                var att = document.createAttribute("disabled");
+                btnDisable.setAttributeNode(att);
+
+            }
+            if (change.type === "modified") {
+                console.log("Modified city: ", change.doc.data());
+            }
+            if (change.type === "removed") {
+                console.log("Removed city: ", change.doc.data());
+            }
+        });
+    });
+}
 // NEW MISSION!
 // Issue Detected! When the Form is Submitted, it is shown in the Table, but when "List all Submissions" button
 // is pressed, it gets showed again because the button function triggers to list all the submissions again!
