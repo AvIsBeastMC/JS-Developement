@@ -38,7 +38,8 @@
     </mainimg>
     <br>
     <br>
-    <h3><u><b>Task 10:</b> Working Library Site JS</u> <span class="badge bg-secondary">On Work! 
+    <h3><u><b>Task 10:</b> Working Library Site using Firestore <br> 
+    for Storing and Reading Data</u> <span class="badge bg-secondary">On Work! 
     <img src="../clock.gif"/ width="25"> </span> <br>
     <a href="../">Go Back to LearningJS!</a>
     </h3>
@@ -70,7 +71,7 @@
               </div> 
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="submit" id="add" class="btn btn-primary">Add Book</button>
+                <button type="submit" onclick="submitForm()" id="add" class="btn btn-primary">Add Book</button>
               </div>
             </div>
           </form>
@@ -85,75 +86,77 @@
                 <th scope="col">Book Name</th>
                 <th scope="col">Book Author</th>
                 <th scope="col">Book Type</th>
+                <th scope="col">Book Submitted On </th>
               </tr>
             </thead>
             <tbody id="tableBody">  
             </tbody>
+            <div id="listAllSubm"></div>
           </table>
     </div>
     <script src="index.js"></script>
-    <!-- Script Here -->
+  <!-- Script Here -->
     <script>
-    console.log("Working");
-    //C Constructor
-    function Book(name, author, type){
-        this.name = name;
-        this.author = author;
-        this.type = type;
-    }
-    // Display Constructor
-    function Display(){
+    // console.log("Working");
+    // //C Constructor
+    // function Book(name, author, type){
+    //     this.name = name;
+    //     this.author = author;
+    //     this.type = type;
+    // }
+    // // Display Constructor
+    // function Display(){
 
-    }
-    // Add Methods to Display Prototype
-    Display.prototype.add = function(book){
-        console.log('Adding to Form');
-        tableBody = document.getElementById("tableBody");
-        // For Populating the Table!
-        let uiString = `
-                <td>${book.name}</td>
-                <td>${book.author}</td>
-                <td>${book.type}</td>
-                </tr>`;
-        tableBody.innerHTML += uiString;        
-        // For Adding an InnerHTML Alert!
-        bodyAlert = document.getElementById("message");
-        let divopString = `<div class="alert alert-success" role="alert">
-                           <h4 class="alert-heading">Well done!</h4>
-                           <p>You Have Successfully Submitted a Book <b>"${book.name}"</b>, <b>${book.author}</b> based on <b>${book.type}</b>! and you may see it in the Books Table below!</p>
-                           <hr>
-                           <p class="mb-0"> You may also Attach the Book PDF (Under Development)</p>`
-        bodyAlert.innerHTML += divopString;
-        // Removing Form for Spam Protection and One Book Submittion at a Time!
-        formRemove = document.getElementById("formremove");
-        let formRemoveString = `<style>#form{
-            display: none;
-        }</style>`;
-        formRemove.innerHTML += formRemoveString;
-        console.log("Form Display Removed!");
-    }
-    Display.prototype.clear = function(){
-        let libraryForm = document.getElementById('form');
-        libraryForm.reset();
-    }
+    // }
+    // // Add Methods to Display Prototype
+    // Display.prototype.add = function(book){
+    //     console.log('Adding to Form');
+    //     tableBody = document.getElementById("tableBody");
+    //     // For Populating the Table!
+    //     let uiString = `
+    //             <td>${book.name}</td>
+    //             <td>${book.author}</td>
+    //             <td>${book.type}</td>
+    //             </tr>`;
+    //     tableBody.innerHTML += uiString;        
+    //     // For Adding an InnerHTML Alert!
+    //     bodyAlert = document.getElementById("message");
+    //     let divopString = `<div class="alert alert-success" role="alert">
+    //                        <h4 class="alert-heading">Well done!</h4>
+    //                        <p>You Have Successfully Submitted a Book <b>"${book.name}"</b>, <b>${book.author}</b> based on <b>${book.type}</b>! and you may see it in the Books Table below!</p>
+    //                        <hr>
+    //                        <p class="mb-0"> You may also Attach the Book PDF (Under Development)</p>`
+    //     bodyAlert.innerHTML += divopString;
+    //     // Removing Form for Spam Protection and One Book Submittion at a Time!
+    //     formRemove = document.getElementById("formremove");
+    //     let formRemoveString = `<style>#form{
+    //         display: none;
+    //     }</style>`;
+    //     formRemove.innerHTML += formRemoveString;
+    //     console.log("Form Display Removed!");
+    // }
+    // Display.prototype.clear = function(){
+    //     let libraryForm = document.getElementById('form');
+    //     libraryForm.reset();
+    // }
 
-    // Add Submit eventListener to Form
-    let libraryForm = document.getElementById('form');
-    libraryForm.addEventListener('submit', libraryFormSubmit);
+    // // Add Submit eventListener to Form
+    // let libraryForm = document.getElementById('form');
+    // libraryForm.addEventListener('submit', libraryFormSubmit);
 
-    function libraryFormSubmit(){
-        event.preventDefault();
-        console.log('[libraryFormSubmit()] You have Submitted Library Form!');
-        let name = document.getElementById('bookName').value;
-        let author = document.getElementById('bookAuthor').value;
-        let type = document.getElementById('bookType').value;
-        let book = new Book(name, author, type);
-        console.log(book);
+    // function libraryFormSubmit(){
+    //     event.preventDefault();
+    //     console.log('[libraryFormSubmit()] You have Submitted Library Form!');
+    //     let name = document.getElementById('bookName').value;
+    //     let author = document.getElementById('bookAuthor').value;
+    //     let type = document.getElementById('bookType').value;
+    //     let book = new Book(name, author, type);
+    //     console.log(book);
 
-        let display = new Display();
-        display.add(book);
-        display.clear();
-    }
+    //     let display = new Display();
+    //     display.add(book);
+    //     display.clear();
+    // }
     </script>
 <!-- Script Ends Here! -->    
 </body>
