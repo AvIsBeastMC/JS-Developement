@@ -55,11 +55,14 @@ function submitForm() {
         listAllSubm = document.getElementById("listAllSubm")
         // For Populating the Table!
         let addForm = `
+                <div id="tableBeforeAllSubm">
+                <tr id="yourTr" style="border-style:groove;border-color: rgb(195, 68, 122)">
                 <td>${formName}</td>
                 <td>${formAuthor}</td>
                 <td>${formType}</td>
                 <td>${submittedOn}</td>
-                </tr>`;
+                </tr>
+                </div>`;
         let listAllSub = `<button type="button" id="butDisable" onclick="displayAllSub()" class="btn btn-info">List all Submittions</button><br>`
         tableBody.innerHTML += addForm;        
         listAllSubm.innerHTML += listAllSub
@@ -82,6 +85,7 @@ function submitForm() {
 function displayAllSub() {
     db.collection("form1").onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
+            console.log("List all Submissions Button Pressed!")
             if (change.type === "added") {
                 console.log("New city: ", change.doc.data());
                 console.log(change.doc.data());
@@ -90,11 +94,13 @@ function displayAllSub() {
                 tableBody = document.getElementById("tableBody");
                 listAllSubm = document.getElementById("listAllSubm")
                 btnDisable = document.getElementById("butDisable");
-
+                submitPreview = document.getElementById("tableBeforeAllSubm") // Preview Table
+                
                 submName = objectReq1.bookName;
                 submAuthor = objectReq1.bookAuthor;
                 submType = objectReq1.bookType;
                 submSubmittedOn = objectReq1.submittedOn;
+                
 
                 let addForm2 = `
                 <td>${submName}</td>
@@ -102,7 +108,15 @@ function displayAllSub() {
                 <td>${submType}</td>
                 <td>${submSubmittedOn}</td>
                 </tr>`;
-
+                // Remove Old Preview
+                let previewRemoveString = `
+                    <style id="sTyle">#tableBeforeAllSubm{
+                    display: none;
+                } 
+                </style>`;
+                submitPreview.innerHTML += previewRemoveString;
+                console.log("Preview Table Display Removed!");
+                
                 tableBody.innerHTML += addForm2;
 
                 var att = document.createAttribute("disabled");
@@ -118,3 +132,16 @@ function displayAllSub() {
         });
     });
 }
+// NEW MISSION!
+// Issue Detected! When the Form is Submitted, it is shown in the Table, but when "List all Submissions" button
+// is pressed, it gets showed again because the button function triggers to list all the submissions again!
+// so it also includes the latest submission too! Thereby, showing 2 records of the Same in the Table!
+
+// FIX REQUIRED!
+// Fix Idea 1: Remove the Table and Only Show It After the Form is Submitted only after the "List all Submissions" 
+// button is pressed!
+// -------------------------------------------------------------
+// Fix Idea 2: Keep the Table, and keep the Initial Submitted Data shown in the Table that shows up in the Table after the Form is submitted
+// though remove that Initial Data when "List all Submissions" button is pressed and show all the Submittions!
+
+// // // //  FIX 2 APPROVED! // // // //
