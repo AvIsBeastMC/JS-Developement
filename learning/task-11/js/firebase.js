@@ -1,5 +1,4 @@
-console.log("wait")
-var app_firebase = {};
+var app_firebase;
 (function(){
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -9,9 +8,8 @@ var app_firebase = {};
         storageBucket: "learning-db1.appspot.com",
         messagingSenderId: "541085478008",
         appId: "1:541085478008:web:8809935ba8fe671461518d"
-      };
+    };
     // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      app_firebase = firebase
-    })()
-    
+    firebase.initializeApp(firebaseConfig);
+    app_firebase = firebase
+})()
