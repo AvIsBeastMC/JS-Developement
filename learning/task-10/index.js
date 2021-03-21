@@ -1,4 +1,4 @@
-console.log("ayo");
+console.log("[JS] Successfully Loaded All JavaScripts and JS Modules!");
 var db = firebase.firestore();
 // Create a New Document in form1 collection
 
@@ -19,9 +19,7 @@ db.collection("form1").onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
             let qweetChange = change.doc.data()
             if (change.type === "added") {
-                console.log("New city: ", change.doc.data());
                 var objectReq = change.doc.data()
-                console.log(objectReq.bookName)
                 // Populate the Table
             }
             if (change.type === "modified") {
@@ -49,10 +47,14 @@ function submitForm() {
     .catch((error) => {
         console.error("Error adding document: ", error);
     });
+    tableBody = document.getElementById("tableBody");
+    listAllSubm = document.getElementById("listAllSubm")
+    // Clear Table
+    console.log(tableBody.innerHTML);
+    tableBody.innerHTML = ``;
+    console.log(tableBody.innerHTML)
     // Display the Submittion to Table
     console.log('Adding to Table');
-        tableBody = document.getElementById("tableBody");
-        listAllSubm = document.getElementById("listAllSubm")
         // For Populating the Table!
         let addForm = `
                 <div id="tableBeforeAllSubm">
@@ -87,8 +89,6 @@ function displayAllSub() {
         snapshot.docChanges().forEach((change) => {
             console.log("List all Submissions Button Pressed!")
             if (change.type === "added") {
-                console.log("New city: ", change.doc.data());
-                console.log(change.doc.data());
                 var objectReq1 = change.doc.data()
 
                 tableBody = document.getElementById("tableBody");
@@ -144,8 +144,6 @@ function displayAllSub2() {
         snapshot.docChanges().forEach((change) => {
             console.log("List all Submissions Button Pressed!")
             if (change.type === "added") {
-                console.log("New city: ", change.doc.data());
-                console.log(change.doc.data());
                 var objectReq1 = change.doc.data()
 
                 tableBody = document.getElementById("tableBody");
