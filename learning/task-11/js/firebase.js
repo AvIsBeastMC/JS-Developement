@@ -1,3 +1,5 @@
+var fireBase = fireBase || firebase;
+var hasInit = false;
 var app_firebase;
 (function(){
     // Your web app's Firebase configuration
