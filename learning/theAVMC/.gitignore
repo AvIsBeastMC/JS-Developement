@@ -2,6 +2,7 @@
 .thumbs.db
 node_modules
 ngrok.exe
+dist
 
 # Quasar core related directories
 .quasar
