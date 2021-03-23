@@ -1,30 +1,25 @@
 var mainApp = {};
 (function(){
-var mainContainer = document.getElementById("main_container");
-
-    var logtout =  function(){
-        firebase.auth().signOut().then(function(){
-            console.log('success');
-            window.location.replace("login.html");
-        },function(){})
-    }
-
-var init = function(){
+var firebase = app_firebase
+    var uid = null
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
-          console.log("stay");
-          mainContainer.style.display = "";
+          uid = user.uid
         } else {
-          // No user is signed in.
-          mainContainer.style.display = "none";
-          console.log("redirect");
-          window.location.replace("login.html");
+        // Redirect to Login Page
+        uid = null
+        windows.location.replace("login.html")
         }
-      });
+    });
+function logOut() {
+    firebase.auth().signOut();   
 }
+<<<<<<< HEAD
 
 init();
+=======
+>>>>>>> 8b9012d213a91cdc643f698e5e92267a3d1a2bd5
 
-mainApp.logout = logtout;
-})();
+mainApp.logOut = logOut;
+})()
