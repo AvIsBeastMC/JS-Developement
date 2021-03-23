@@ -23,5 +23,6 @@
     "platforms": [
       "android"
     ]
-  }
+  },
+  "dependencies": {}
 }
