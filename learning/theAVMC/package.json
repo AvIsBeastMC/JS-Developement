@@ -1,7 +1,7 @@
 {
   "name": "theavmc-qwitter",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
+  "description": "theAVMC's Qwitter is a Community for Microbloggers and a Fresh Social Networking Service!",
   "productName": "theAVMC",
   "author": "AvIsBeastMC <admin@playavmcgames.ml>",
   "private": true,
@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "@vue/cli-service": "^4.5.12",
     "cordova": "^10.0.0",
     "core-js": "^3.6.5",
     "date-fns": "^2.19.0",
     "firebase": "^8.3.1",
-    "quasar": "^1.15.6"
+    "quasar": "^1.15.6",
+    "vuetify": "^2.4.8"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",
