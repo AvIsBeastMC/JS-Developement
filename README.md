@@ -1,8 +1,9 @@
 # JS Development
-**Update | Commit: 5:42 PM | 18-March-21**
+**Update | Commit: 4:14 PM | 27-March-21**
 ------------------------------
-1. Reverted back to Latest Commit in GitHub (8c9c49d) [Added Windows Support & More!] due to Problems in Pushing Commits to Remote GitHub Repo & due to some files being mismatched...
-2. Working on New Commit that may Include Finished Windows Application with Resource Files that will be compiled by Electron.
-3. Also working on the Android Version of theAVMC | Qwitter, the Android Application will be Combined by Cordova!
-4. Adding Link for theAVMC | Qwitter Quasar Project in the LearningJS Page.
+1. Created Working Windows App for Quasar Qwitter Project! Working on More Possibilities in Quasar and VueJS
+2. Worked on Firebase Auth using Vanilla JavaScript, learning ways to Authenticate Users using either their Google, Microsoft or Apple Account or even using Phone Auth.
+3. Put Task-9 (Create Authenticated Dashboard Page using Node, Vue...) on Hold, more much important projects under work.
+4. Finished Creating a Working Library Book Submission Site (Vanilla JavaScript) [Task-10] but with Firebase Firestore for Submission Data and Tracking Data (such as Showing all Submissions using show all submissions button!)
+5. Task-11 under work! Commits coming up!
 ------------------------------
