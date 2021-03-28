@@ -1,9 +1,9 @@
 # JS Development
-**Update | Commit: 4:14 PM | 27-March-21**
+**Update | Commit: 3:32 PM | 28-March-21**
 ------------------------------
-1. Created Working Windows App for Quasar Qwitter Project! Working on More Possibilities in Quasar and VueJS
-2. Worked on Firebase Auth using Vanilla JavaScript, learning ways to Authenticate Users using either their Google, Microsoft or Apple Account or even using Phone Auth.
-3. Put Task-9 (Create Authenticated Dashboard Page using Node, Vue...) on Hold, more much important projects under work.
-4. Finished Creating a Working Library Book Submission Site (Vanilla JavaScript) [Task-10] but with Firebase Firestore for Submission Data and Tracking Data (such as Showing all Submissions using show all submissions button!)
-5. Task-11 under work! Commits coming up!
+1. Successfully Built the Android Version (apk) and the Windows Version (with an Installer, so .zip) of theAVMC Project! Any of Both Versions Can Be Downloaded from the LearningJS Page!
+2. Also, started working on New Commits regarding New Pages and More Additional Twitter-like Features like Authenticated Users with Profile, a Trending and a Profile Page and More!
+3. Will also be working on Tasks that are Currently Not on Consistant Commits and Edits
+4. Will Also be Learning and Working on New Projects based on ReactJS!
+5. Learning Firebase Services in-depth!
 ------------------------------
