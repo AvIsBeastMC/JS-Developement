@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="org.cordova.quasar.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>theAVMC</name>
-    <description>A Quasar Framework app</description>
+    <description>theAVMC's Qwitter is a Community for Microbloggers and a Fresh Social Networking Service!</description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
-    <content src="index.html" />
+    <content src="http://192.168.1.4:8080" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -21,4 +21,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <allow-navigation href="about:*" />
+    <allow-navigation href="http://192.168.1.4:8080" />
 </widget>
