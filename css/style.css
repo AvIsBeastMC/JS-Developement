@@ -1,0 +1,20 @@
+nav a img{
+    border-radius: 50%;
+    width: 45px;
+}
+github-1 {
+    font-weight: 6000;
+}
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+#runAnimation {  
+    /* This section calls the slideInFromLeft animation we defined above */
+    animation: 1.7s ease-out 0s 1 slideInFromLeft;
+    padding: 30px;
+  }
