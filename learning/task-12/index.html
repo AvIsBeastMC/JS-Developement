@@ -11,9 +11,13 @@
     <link rel="shortcut icon" type="image/jpg" href="../servermc.png">
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <script src="js/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="js/firebase.js"></script>
+    <script type="text/javascript">
+        var userip;
+      </script>
+      <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
     <!-- Bootstrap, Tailwind -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     
@@ -23,6 +27,9 @@
     <title>LearningJS | AVMC</title>
 </head>
 <body>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="js/index.js"></script>    
+    <script src="js/payment.js"></script>    
     <!-- This example requires Tailwind CSS v2.0+ -->
 <div id="good1" class="relative bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto">
@@ -153,8 +160,8 @@
               <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Fresh Kashmiri Apples</h1>
               <p class="leading-relaxed mb-3">Kashmir Apples are blush red and smooth skinned apples which are superior in terms of quality and taste. The crispy, sweet ann juicy texture is a treat to the tongue</p>
               <div class="flex items-center flex-wrap ">
-                <a onclick="" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
-                </a>
+                <button onclick="addKashmiriApples()" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
+                </button>
               </div>
             </div>
           </div>
@@ -167,8 +174,8 @@
                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Nike Air Force 1</h1>
                 <p class="leading-relaxed mb-3">From high-top to low-top. Live the legend of the Air Force 1, modernized for ultimate street style. Make the Air Force 1 yours with premium materials and more.</p>
                 <div class="flex items-center flex-wrap ">
-                  <a onclick="" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
-                  </a>
+                  <button onclick="addNikeAirForce1()" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
+                  </button>
                 </div>
               </div>
             </div>
@@ -182,8 +189,10 @@
                 <p class="leading-relaxed mb-3">
                     Super Smooth Writing Pen, Consistent Ink-Flow, Five Boxes having 20 Pens in each, get 100 Pens at the Lowest Rate but Best Quality Possible, Buy Now!</p>
                 <div class="flex items-center flex-wrap ">
-                  <a onclick="" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
-                  </a>
+                <mporishotgel id="mporishotgel">    
+                  <button id="MporisHotgel100" onclick="addMporisHotgel100()" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
+                  </button>
+                </mporishotgel>  
                 </div>
               </div>
             </div>
@@ -191,6 +200,5 @@
       </div>
     </div>
   </section>
-<script src="js/index.js"></script>    
 </body>
 </html>   
