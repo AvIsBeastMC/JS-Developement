@@ -24,11 +24,13 @@
     <!-- HTML, CSS and JavaScript -->
     <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
-    <title>LearningJS | AVMC</title>
+    <title>Shopping | AVMC</title>
 </head>
 <body>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="js/index.js"></script>    
+    <script src="js/mporishotgel.js"></script>    
+    <script src="js/nike.js"></script>    
+    <script src="js/priceconstructor.js"></script>    
     <script src="js/payment.js"></script>    
     <!-- This example requires Tailwind CSS v2.0+ -->
 <div id="good1" class="relative bg-white overflow-hidden">
@@ -47,7 +49,7 @@
                   <img class="h-8 w-auto sm:h-10" src="../servermc.png" style="border-radius: 50%;">
                 </a>
                 <div class="-mr-2 flex items-center md:hidden">
-                  <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                  <button type="button" onclick="toggleBack()" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <!-- Heroicon name: outline/menu -->
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -81,14 +83,18 @@
             From: "opacity-100 scale-100"
             To: "opacity-0 scale-95"
         -->
-        <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+        <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden" id="menu">
           <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div class="px-5 pt-4 flex items-center justify-between">
               <div>
                 <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
               </div>
               <div class="-mr-2">
-                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <script>
+                  const menu = document.getElementById('menu');
+                  let toggle = () => menu.classList.toggle("hidden");
+                </script>
+                <button type="button" onclick="toggle()" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span class="sr-only">Close main menu</span>
                   <!-- Heroicon name: outline/x -->
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -98,16 +104,16 @@
               </div>
             </div>
             <div class="px-2 pt-2 pb-3 space-y-1">
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Product</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
   
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Features</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Profile</a>
   
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Marketplace</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Orders</a>
   
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Company</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</a>
             </div>
             <a href="#" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100">
-              Log in
+              Log in or Create an Account
             </a>
           </div>
         </div>
@@ -174,15 +180,17 @@
                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Nike Air Force 1</h1>
                 <p class="leading-relaxed mb-3">From high-top to low-top. Live the legend of the Air Force 1, modernized for ultimate street style. Make the Air Force 1 yours with premium materials and more.</p>
                 <div class="flex items-center flex-wrap ">
-                  <button onclick="addNikeAirForce1()" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
+                <nike id="nike">
+                  <button id="NikeAirForce1" onclick="addNikeAirForce1()" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
                   </button>
+                </nike>
                 </div>
               </div>
             </div>
           </div>
           <div class="p-4 md:w-1/3">
             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-              <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://mporispens.com/pens/images/post_thumb_3.jpg" alt="blog">
+              <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="http://mporispens.com/pens/images/post_thumb_3.jpg" alt="blog">
               <div class="p-6">
                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">STATIONARY</h2>
                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Mporis Hotgel Blue Ball Pen (100 P.)</h1>

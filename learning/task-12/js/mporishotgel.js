@@ -32,9 +32,6 @@ function addMporisHotgel100() {
         return;
     });
 }
-function addNikeAirForce1() {
-    console.log(`Buy Nike Air Force 1`)
-}
 function addKashmiriApples() {
     console.log(`Buy Kashmiri Apples`)
 }
@@ -73,7 +70,7 @@ function paymentProcess() {
         "amount": payPrice*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         "currency": "INR",
         "name": "AvIsBeastMC",
-        "description": "Test Transaction",
+        "description": "Mporis Hotgel Blue Ball Pen (20x5 Boxes)",
         "image": "https://avmcgames.ml/servermc.png", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         "handler": function (response){
             alert(response.razorpay_payment_id);
