@@ -1,5 +1,34 @@
-mainimg img {
+
+/* Fonts */
+@font-face {
+    font-family: bigjohn;
+    src: url(../fonts/bigjohn.otf) format('opentype');
+  }
+  @font-face {
+    font-family: cunia;
+    src: url(../fonts/Cunia.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: secular;
+    src: url(../fonts/secular.ttf) format('truetype');
+}
+/* Main */
+.logo {
     border-radius: 50%;
     width: 7%;
-    border-color: linear-gradient(to right top, #65dfc9, #6cdbeb);
-    }
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+/* .container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../assets/background.png);
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+} */
