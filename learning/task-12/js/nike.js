@@ -1,4 +1,3 @@
-
 function addNikeAirForce1() {
     console.log(`Buy Nike Air Force 1`);
     localNikeQuantity += 1;
@@ -22,9 +21,20 @@ function addNikeAirForce1() {
         nike.innerHTML = `<p class="text-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Quantity:  ${currentData.Order.quantity}⠀ <button id="${docRef.id}" currentData="${currentData}" onclick="addQuantityNike(id)"><img src="https://img.icons8.com/emoji/21/000000/plus-emoji.png"/></button>
         
         </p>`
-        paybutton.innerHTML = `<h5><center>
-        <button onclick="getPriceTillNow()" id="rzp-button1" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-        Pay</button></center></h5>`
+        if (document.body.contains(document.getElementById("checkout")) == false) {
+            ayo.innerHTML += `
+            <br><span id="checkout">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">GROCERIES, STATIONARY, FRUITS AND DRINKS AND ALSO, SHOES</h2>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Checkout Items</h1>
+            </div>
+            <h5><center>
+            <button onclick="getPriceTillNow()" id="rzp-button1" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            Pay</button></center></h5></span>`
+        } else if (document.body.contains(document.getElementById("checkout")) == true) {
+            return;
+        }
+        
         });
     })
     .catch((error) => {
