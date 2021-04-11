@@ -55,7 +55,7 @@ function getPriceTillNow() {
     console.log(sumDescription)
     var options = {
         "key": "rzp_test_6J6TxvsucAJkIq", // Enter the Key ID generated from the Dashboard
-        "amount": totalCost*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "amount": totalCost*100, // Amount is i n currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         "currency": "INR",
         "name": "AVMC Shopping",
         "description": `${sumDescription}`,

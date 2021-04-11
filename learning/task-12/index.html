@@ -28,10 +28,11 @@
 </head>
 <body>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="js/kashmiriapples.js"></script>    
-    <script src="js/mporishotgel.js"></script>    
+    <!-- <script src="js/kashmiriapples.js"></script>     -->
+    <script src="js/main.js"></script>    
+    <!-- <script src="js/mporishotgel.js"></script>    
     <script src="js/nike.js"></script>    
-    <script src="js/priceconstructor.js"></script>    
+    <script src="js/priceconstructor.js"></script>     -->
     <script src="js/payment.js"></script>    
     <!-- This example requires Tailwind CSS v2.0+ -->
 <div id="good1" class="relative bg-white overflow-hidden">
@@ -167,8 +168,10 @@
               <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Fresh Kashmiri Apples</h1>
               <p class="leading-relaxed mb-3">Kashmir Apples are blush red and smooth skinned apples which are superior in terms of quality and taste. The crispy, sweet ann juicy texture is a treat to the tongue</p>
               <div class="flex items-center flex-wrap ">
-                <button onclick="addKashmiriApples()" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
+              <kashmiriapples id="kashmiriapples">
+                <button onclick="getItem()" id="KashmiriApple" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
                 </button>
+              </kashmiriapples>
               </div>
             </div>
           </div>
@@ -182,7 +185,7 @@
                 <p class="leading-relaxed mb-3">From high-top to low-top. Live the legend of the Air Force 1, modernized for ultimate street style. Make the Air Force 1 yours with premium materials and more.</p>
                 <div class="flex items-center flex-wrap ">
                 <nike id="nike">
-                  <button id="NikeAirForce1" onclick="addNikeAirForce1()" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
+                  <button onclick="getItem()" id="nikeairforce" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
                   </button>
                 </nike>
                 </div>
@@ -199,7 +202,7 @@
                     Super Smooth Writing Pen, Consistent Ink-Flow, Five Boxes having 20 Pens in each, get 100 Pens at the Lowest Rate but Best Quality Possible, Buy Now!</p>
                 <div class="flex items-center flex-wrap ">
                 <mporishotgel id="mporishotgel">    
-                  <button id="MporisHotgel100" onclick="addMporisHotgel100()" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
+                  <butto onclick="getItem()" id="mporishotgel" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><img src="https://img.icons8.com/plasticine/28/000000/shopping-cart-loaded.png"/>⠀Add to Cart 
                   </button>
                 </mporishotgel>  
                 </div>
@@ -207,9 +210,7 @@
             </div>
           </div>
           <hr>
-          <paybutton id="paybutton">
-            
-          </paybutton>
+          <paybutton id="paybutton"></paybutton>
       </div>
     </div>
   </section>
