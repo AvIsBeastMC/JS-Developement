@@ -6,7 +6,7 @@
         <q-input bottom-slots v-model="newQweetInput" autogrow class="new-post" label="What's poppin'?" counter maxlength="280" :dense="dense">
         <template v-slot:before>
           <q-avatar size="xl">
-            <img src="https://avmcgames.ml/servermc.png">
+            <img src="https://playavmcgames.ml/servermc.png">
           </q-avatar>
         </template>
         <template v-slot:hint>

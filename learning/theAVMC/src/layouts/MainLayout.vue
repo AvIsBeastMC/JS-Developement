@@ -1,13 +1,13 @@
 <template>
   <q-layout view="lHr lpR fFf">
-
+    <title>{{ $route.name }} | AVMC</title>
     <q-header bordered class="bg-grey-3 text-black">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="left = !left" />
-
         <q-toolbar-title class="text-weight-bold">
           <span class="gt-sm">{{ $route.name }}</span>
           <q-icon name="fas fa-kiwi-bird" size="sm" class="q-pa-md lt-md header-icon" />
+          <q-btn class="float-right" dense flat round icon="search" @click="right = !right" />
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -25,6 +25,12 @@
         <q-item-section class="text-weight-medium">About</q-item-section>
         <q-item-section avatar>
           <q-icon name="info" size="22px" />
+        </q-item-section>
+      </q-item>
+      <q-item exact clickable v-ripple to="/learn">
+        <q-item-section class="text-weight-medium">Learn</q-item-section>
+        <q-item-section avatar>
+          <q-icon name="fas fa-question" size="21px" />
         </q-item-section>
       </q-item>
     </q-list>
