@@ -28,7 +28,7 @@
         </q-item-section>
       </q-item>
       <q-item exact clickable v-ripple to="/learn">
-        <q-item-section class="text-weight-medium">Learn</q-item-section>
+        <q-item-section class="text-weight-medium">Development</q-item-section>
         <q-item-section avatar>
           <q-icon name="fas fa-question" size="21px" />
         </q-item-section>

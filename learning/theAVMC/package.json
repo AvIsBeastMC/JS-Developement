@@ -9,6 +9,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.0.0",
     "@quasar/extras": "^1.0.0",
     "@vue/cli-service": "^4.5.12",
     "cordova": "^10.0.0",
@@ -16,6 +17,7 @@
     "date-fns": "^2.19.0",
     "firebase": "^8.3.1",
     "quasar": "^1.15.6",
+    "vue-simple-alert": "^1.1.1",
     "vuetify": "^2.4.8"
   },
   "devDependencies": {

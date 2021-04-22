@@ -16,4 +16,6 @@
 export default {
   name: 'PageAbout'
 }
+import VueSimpleAlert from "vue-simple-alert";
+
 </script>
