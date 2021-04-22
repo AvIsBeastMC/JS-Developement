@@ -3,14 +3,14 @@
     <q-scroll-area class="absolute full-width full-height">
     <div class="q-pa-lg row items-end q-col-gutter-md">
       <div class="col">
-        <q-input bottom-slots v-model="newQweetInput" autogrow class="new-post" label="What's poppin'?" counter maxlength="280" :dense="dense">
+        <q-input bottom-slots v-model="newQweetInput" autogrow class="new-post" label="What's poppin'?" counter maxlength="280">
         <template v-slot:before>
           <q-avatar size="xl">
             <img src="https://playavmcgames.ml/servermc.png">
           </q-avatar>
         </template>
         <template v-slot:hint>
-          Post | theAVMC
+          Post | AVMC
         </template>
       </q-input>
       </div>
@@ -24,7 +24,7 @@
       <q-item class="qweet q-py-md" v-for="qweet in qweets" :key="qweet.id">
         <q-item-section avatar top>
           <q-avatar>
-            <img src="https://avmcgames.ml/servermc.png">
+            <img src="https://playavmcgames.ml/servermc.png">
           </q-avatar>
         </q-item-section>
 

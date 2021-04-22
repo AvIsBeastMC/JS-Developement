@@ -37,7 +37,7 @@
     </q-drawer>
 
     <q-drawer show-if-above v-model="right" side="right" bordered>
-    <q-input outlined rounded placeholder="Search theAVMC" dense class="q-ma-md">
+    <q-input outlined rounded placeholder="Search AVMC" dense class="q-ma-md">
         <template v-slot:prepend>
           <q-icon name="search" />
         </template>
@@ -49,8 +49,8 @@
       <q-item class="q-pa-md">
         <q-item-section>
           <q-item-label overline>Announcement!</q-item-label>
-          <q-item-label class="text-weight-bold">AVMC Shutdown Notice</q-item-label>
-          <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+          <q-item-label class="text-weight-bold">AVMC Back Online!</q-item-label>
+          <q-item-label caption>We are happy to Announce that after 2-3 months of the AVMC Network being inactive, it is Back Online!</q-item-label>
         </q-item-section>
 
         <q-item-section side top>
@@ -61,11 +61,11 @@
         <q-item-section>
           <q-item-label overline>Announcement!</q-item-label>
           <q-item-label class="text-weight-bold">AVMC Shutdown Notice</q-item-label>
-          <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+          <q-item-label caption>We are shutting down AVMC due to a series of mismanagement issues and some more reasons.</q-item-label>
         </q-item-section>
 
         <q-item-section side top>
-          <q-item-label caption>5 min ago</q-item-label>
+          <q-item-label caption>3 months ago</q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
