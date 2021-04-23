@@ -54,7 +54,7 @@
         </q-item-section>
 
         <q-item-section side top>
-          <q-item-label caption>5 min ago</q-item-label>
+          <q-item-label caption>22 April 21</q-item-label>
         </q-item-section>
       </q-item>
     <q-item class="q-pa-md">
@@ -65,7 +65,7 @@
         </q-item-section>
 
         <q-item-section side top>
-          <q-item-label caption>3 months ago</q-item-label>
+          <q-item-label caption>15 March 21</q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
