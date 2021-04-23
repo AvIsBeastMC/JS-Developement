@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Task-13 (HTML & CSS Design) | AVMC</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="../servermc.png">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo"><span style="line-height:0px;"> AVMC<span class="lmao">NETWORK.</span></span></a>
+            <a class="logo2">⠀⠀⠀⠀⠀⠀<u>mc.playavmcgames.ml</u></a>
+            <ul class="navigation">
+                <li><a href="#banner">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </header>
+        <section class="banner" id="banner">
+            <div class="content">
+                <h2>Always Choose the <b>Better</b><span id="exclam">!</span></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Voluptatem ducimus accusamus placeat inventore laudantium consectetur quidem, rerum, 
+                iusto blanditiis eum a eos molestiae fugit obcaecati alias necessitatibus nostrum ullam 
+                aspernatur.</p>
+                <a href="" class="btn">Our Menu</a>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="row">
+                <div class="col50">
+                    <h2><span>A</span>bout Us</h2>
+                    <p>Lorem ipsum dolor sit, 
+                    amet consectetur adipisicing elit. 
+                    Quos quaerat praesentium nisi provident temporibus 
+                    ea quae aliquid incidunt blanditiis repudiandae! 
+                    Dicta necessitatibus officia aspernatur, quae dolorem consectetur 
+                    accusamus enim. Enim!
+                    <br><br>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, a 
+                    aliquam perferendis sequi alias vero facere ratione libero fuga 
+                    dolorem laborum odit incidunt quibusdam illum mollitia, quam dolorum soluta quia!
+                    </p>
+                </div>
+                <div class="col50">
+                    <div class="imgBx">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            // Navbar Stickyness
+            window.addEventListener('scroll', function(){
+            const header = document.querySelector('header');
+            header.classList.toggle("sticky", window.scrollY > 0)
+        });
+        </script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
