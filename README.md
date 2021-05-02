@@ -10,4 +10,6 @@
 <br>
 • Planning for a New Tasks with the Major Purpose being to Learn Web Designing more practically (Raw CSS and HTML)
 <hr>
+<br>
+• Changed site address due to problems in Renewing the Old (avisbeastmc.ml) One.
 <h3>AvIsBeastMC | JS-Development</h3>
