@@ -4,7 +4,6 @@ node_modules
 ngrok.exe
 dist/electron/theAVMC-win32-x64
 dist/electron/UnPackaged
-dist
 
 # Quasar core related directories
 .quasar
