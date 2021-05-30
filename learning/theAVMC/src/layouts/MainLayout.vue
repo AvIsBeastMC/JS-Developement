@@ -46,28 +46,19 @@
         separator
         padding
     >  
-      <q-item class="q-pa-md">
+    <object id="ann">
+      <q-item class="q-pa-md" v-for="ann in announcements" :key="ann.title">
         <q-item-section>
           <q-item-label overline>Announcement!</q-item-label>
-          <q-item-label class="text-weight-bold">AVMC Back Online!</q-item-label>
-          <q-item-label caption>We are happy to Announce that after 2-3 months of the AVMC Network being inactive, it is Back Online!</q-item-label>
+          <q-item-label class="text-weight-bold">{{ ann.title }}</q-item-label>
+          <q-item-label caption>{{ ann.description }}</q-item-label>
         </q-item-section>
 
         <q-item-section side top>
           <q-item-label caption>22 April 21</q-item-label>
         </q-item-section>
       </q-item>
-    <q-item class="q-pa-md">
-        <q-item-section>
-          <q-item-label overline>Announcement!</q-item-label>
-          <q-item-label class="text-weight-bold">AVMC Shutdown Notice</q-item-label>
-          <q-item-label caption>We are shutting down AVMC due to a series of mismanagement issues and some more reasons.</q-item-label>
-        </q-item-section>
-
-        <q-item-section side top>
-          <q-item-label caption>15 March 21</q-item-label>
-        </q-item-section>
-      </q-item>
+    </object>
     </q-list>
     </q-drawer>
 
@@ -81,12 +72,27 @@
 </template>
 
 <script>
+import db from "src/boot/firebase";
 export default {
   data () {
     return {
       left: false,
-      right: false
+      right: false,
+      announcements: []
     }
+  },
+  mounted () { 
+    db.collection("announcements").onSnapshot(snapshot => {
+        snapshot.docChanges().forEach(change => {
+          let data = change.doc.data()
+          console.log("Found one: ")
+          console.log(data);
+          // Implement
+          // announcements.unshift(data)
+          this.announcements.unshift(data);
+          console.log(this.announcements);
+        });
+    });
   }
 }
 </script>

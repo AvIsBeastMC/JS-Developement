@@ -86,7 +86,7 @@ export default {
       }).catch((error) => {
           console.error("Error adding document: ", error);
       });
-            this.newQweetInput = ''
+      this.newQweetInput = ''
     },
     deleteQweet(qweet) {
       db.collection("qweets").doc(qweet.id).delete().then(() => {
