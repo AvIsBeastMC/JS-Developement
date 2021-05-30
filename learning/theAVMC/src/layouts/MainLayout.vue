@@ -47,15 +47,15 @@
         padding
     >  
     <object id="ann">
-      <q-item class="q-pa-md" v-for="ann in announcements" :key="ann.title">
+      <q-item class="q-pa-md" v-for="ann in announcements" :key="ann.title" :id="ann.title">
         <q-item-section>
           <q-item-label overline>Announcement!</q-item-label>
-          <q-item-label class="text-weight-bold">{{ ann.title }}</q-item-label>
-          <q-item-label caption>{{ ann.description }}</q-item-label>
+          <q-item-label class="text-weight-bold" :id="ann.title + '-title'">{{ ann.title }}</q-item-label>
+          <q-item-label caption :id="ann.title + '-desc'">{{ ann.description }}</q-item-label>
         </q-item-section>
 
         <q-item-section side top>
-          <q-item-label caption>22 April 21</q-item-label>
+          <q-item-label caption>{{ ann.date }}</q-item-label>
         </q-item-section>
       </q-item>
     </object>
@@ -82,15 +82,31 @@ export default {
     }
   },
   mounted () { 
-    db.collection("announcements").onSnapshot(snapshot => {
-        snapshot.docChanges().forEach(change => {
-          let data = change.doc.data()
-          console.log("Found one: ")
-          console.log(data);
-          // Implement
-          // announcements.unshift(data)
-          this.announcements.unshift(data);
-          console.log(this.announcements);
+    // db.collection("announcements").onSnapshot(snapshot => {
+    //     snapshot.docChanges().forEach(change => {
+    //       let data = change.doc.data()
+    //       console.log("Found one: ")
+    //       console.log(data);
+    //       // Implement
+    //       // announcements.unshift(data)
+    //       this.announcements.unshift(data);
+    //       console.log(this.announcements);
+    //     });
+    // });
+    db.collection("announcements").onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+            let data = change.doc.data()
+            if (change.type === "added") {
+                let data = change.doc.data()
+                this.announcements.unshift(data);
+            }
+            if (change.type === "modified") {
+                // Search for Element with ID to change props innit
+
+            }
+            if (change.type === "removed") {
+                console.log("Removed city: ", change.doc.data());
+            }
         });
     });
   }
