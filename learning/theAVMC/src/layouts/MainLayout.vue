@@ -50,8 +50,8 @@
       <q-item class="q-pa-md" v-for="ann in announcements" :key="ann.title" :id="ann.title">
         <q-item-section>
           <q-item-label overline>Announcement!</q-item-label>
-          <q-item-label class="text-weight-bold" :id="ann.title + '-title'">{{ ann.title }}</q-item-label>
-          <q-item-label caption :id="ann.title + '-desc'">{{ ann.description }}</q-item-label>
+          <q-item-label class="text-weight-bold" :id="ann.title + '-title'" :ref="ann.id">{{ ann.title }}</q-item-label>
+          <q-item-label caption :id="ann.title + '-desc'" :ref="ann.id + '-desc'">{{ ann.description }}</q-item-label>
         </q-item-section>
 
         <q-item-section side top>
@@ -81,28 +81,17 @@ export default {
       announcements: []
     }
   },
-  mounted () { 
-    // db.collection("announcements").onSnapshot(snapshot => {
-    //     snapshot.docChanges().forEach(change => {
-    //       let data = change.doc.data()
-    //       console.log("Found one: ")
-    //       console.log(data);
-    //       // Implement
-    //       // announcements.unshift(data)
-    //       this.announcements.unshift(data);
-    //       console.log(this.announcements);
-    //     });
-    // });
+  mounted () {
     db.collection("announcements").onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
-            let data = change.doc.data()
+            let data = change.doc.data();
+            let id = change.doc.id;
             if (change.type === "added") {
-                let data = change.doc.data()
                 this.announcements.unshift(data);
             }
             if (change.type === "modified") {
                 // Search for Element with ID to change props innit
-
+                document.getElementById(data.title + "-title").innerText = data.title;
             }
             if (change.type === "removed") {
                 console.log("Removed city: ", change.doc.data());
