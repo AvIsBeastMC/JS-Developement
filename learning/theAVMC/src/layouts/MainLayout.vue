@@ -86,6 +86,10 @@ export default {
         snapshot.docChanges().forEach((change) => {
             let data = change.doc.data();
             let id = change.doc.id;
+            if (data.note == true) {
+              
+            }
+            else {
             if (change.type === "added") {
                 this.announcements.unshift(data);
             }
@@ -95,6 +99,7 @@ export default {
             }
             if (change.type === "removed") {
                 console.log("Removed city: ", change.doc.data());
+            }
             }
         });
     });
